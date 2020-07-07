@@ -1,2 +1,33 @@
-<p class="big">テストテストテストテストテストテストテストテスト</p>
-<button mat-button>Basic</button>
+<div class="content">
+  <table mat-table class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> p_id </th>
+      <!-- <td mat-cell *ngFor="let product of products$ | async"> {{product.p_id}} </td> -->
+      <td mat-cell *matCellDef="let products"> 1 </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> p_name </th>
+      <td mat-cell *matCellDef="let products"> 田中</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> p_description </th>
+      <td mat-cell *matCellDef="let products"> あいう </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> p_price </th>
+      <td mat-cell *matCellDef="let products"> 1000円 </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
