@@ -1,5 +1,6 @@
 <?php
 // used to connect to the database
+ini_set( 'display_errors', 1 );
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 print_r($url);
 $server = $url["host"];
