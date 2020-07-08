@@ -12,7 +12,7 @@ export class TestPageComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   posts$: Observable<Post[]> = this.postService
     .getPosts()
-    .pipe(tap(data => console.log(data)));
+    .pipe(map(data => data));
   // products: Products[];
   // dataSource = this.products$;
   // sub = new Subscription();
