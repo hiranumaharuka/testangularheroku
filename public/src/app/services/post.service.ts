@@ -7,7 +7,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PostService {
-  url = 'https://test2-angular-heroku.herokuapp.com/testheroku/';
+  url = 'https://us-cdbr-east-02.cleardb.com/';
   constructor(private http: HttpClient) {}
   getPosts(): Observable<Post[]> {
     return this.http

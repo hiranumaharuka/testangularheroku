@@ -10,7 +10,7 @@ include 'config/database.php';
 // select all data
 error_reporting(E_ERROR);
 $posts = [];
-$sql = "SELECT * FROM posts a INNER JOIN register b ON a.authorId=b.id;";
+$sql = "SELECT * FROM posts;";
 
 if($result = mysqli_query($con,$sql))
 {
@@ -21,7 +21,7 @@ if($result = mysqli_query($con,$sql))
     $posts[$cr]['title'] = $row['title'];
     $posts[$cr]['content'] = $row['content'];
     $posts[$cr]['category'] = $row['category'];
-    $posts[$cr]['userName'] = $row['username'];
+    $posts[$cr]['authorId'] = $row['authorId'];
     $cr++;
   }
 
