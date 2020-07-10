@@ -14,4 +14,10 @@ export class PostService {
       .get<Post[]>(this.url + 'view.php')
       .pipe(map((data) => data));
   }
+
+  createPost(data: Omit<Post, 'postId' | 'authorId'>, authorId){
+    return this.http
+      .post(this.url + 'create.php', { data, authorId })
+      .pipe(map((res) => res));
+  }
 }
