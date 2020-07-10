@@ -3,7 +3,7 @@ import { Post } from './../../post';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormControl, FormGroupDirective } from '@angular/forms';
 @Component({
   selector: 'app-test-page',
   templateUrl: './test-page.component.html',
@@ -37,7 +37,7 @@ export class TestPageComponent implements OnInit {
   }
 
 
-  create(): void {
+  create(form: FormGroupDirective): void {
     const formData = this.form.value;
     console.log(formData);
     const authorId = 100;
@@ -45,6 +45,7 @@ export class TestPageComponent implements OnInit {
       console.log(data);
       // this.products.push(data);
     });
+    form.resetForm();
     console.log('登録');
   }
 }
