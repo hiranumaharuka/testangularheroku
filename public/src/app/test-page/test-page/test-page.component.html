@@ -83,24 +83,13 @@
       </mat-select>
     </mat-form-field>
     <div class="form-footer">
-      <!-- <button
-        *ngIf="isLogin; else login"
+      <button
         [disabled]="form.invalid"
         mat-raised-button
         color="primary"
       >
         募集する
-      </button> -->
-      <ng-template #login>
-        <button
-          type="button"
-          mat-raised-button
-          color="primary"
-          routerLink="/welcome/login"
-        >
-          ログインして応募する
-        </button>
-      </ng-template>
+      </button>
     </div>
   </form>
 </div>
