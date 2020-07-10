@@ -44,8 +44,10 @@ export class TestPageComponent implements OnInit {
     this.postService.createPost(formData, authorId).subscribe((data) => {
       console.log(data);
       // this.products.push(data);
+    },
+    (err) => {
+      console.log(err);
     });
     form.resetForm();
-    console.log('登録');
   }
 }
